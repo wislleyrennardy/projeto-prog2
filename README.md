@@ -19,57 +19,31 @@ Sistema de gerenciamento de músicas, playlists, artistas e reprodução simulad
 - 🔥 **Recomendações**: Top Charts baseado nas músicas mais curtidas
 - 💾 **Persistência**: Dados salvos automaticamente ao sair
 
-## Estrutura de Pacotes
+## Como Usar
 
-```
-src/
-├── main/
-│   └── Projeto.java              # Classe principal (CLI)
-├── model/
-│   ├── midia/
-│   │   ├── Audio.java            # Classe abstrata base
-│   │   ├── Artista.java          # Modelo de artista
-│   │   ├── Album.java            # Modelo de álbum
-│   │   ├── Musica.java           # Classe de música
-│   │   └── Podcast.java          # Classe de podcast
-│   ├── playlist/
-│   │   └── Playlist.java         # Gerenciamento de playlists
-│   └── usuario/
-│       └── Usuario.java          # Modelo de usuário com autenticação
-├── service/
-│   ├── BibliotecaService.java    # Gerenciamento do catálogo (Singleton)
-│   ├── PlayerService.java        # Controle de reprodução
-│   └── UsuarioService.java       # Gerenciamento de usuários (Singleton)
-├── interfaces/
-│   └── Reproduzivel.java         # Interface para itens reproduzíveis
-├── exception/
-│   ├── BaseAppException.java     # Exceção base da aplicação
-│   ├── ValidacaoException.java   # Exceções de validação
-│   └── UsuarioNaoEncontradoException.java
-├── menu/
-│   ├── MenuPrincipal.java        # Menu principal do sistema
-│   ├── MenuPlayer.java           # Controles do player
-│   ├── MenuPlaylist.java         # Gerenciamento de playlists
-│   ├── TelaAutenticacao.java     # Login e cadastro
-│   ├── TelaCatalogo.java         # Navegação pelo catálogo
-│   ├── TelaPerfil.java           # Perfil do usuário
-│   └── UtilConsole.java          # Utilitários de console
-└── test/
-    ├── service/
-    │   ├── PlayerServiceTest.java
-    │   ├── UsuarioServiceTest.java
-    │   └── BibliotecaServiceTest.java
-    └── model/playlist/
-        └── PlaylistTest.java
-```
+### Primeiro Acesso
+1. Execute o programa
+2. Selecione a opção **2. 📝 Cadastrar**
+3. Preencha email (para login), nome de exibição e senha
+4. Após cadastro, você será logado automaticamente
 
-## Documentação
+### Login
+1. Selecione a opção **1. 🔑 Login**
+2. Digite seu email e senha
 
-📖 **Javadoc**: A documentação completa das classes e métodos está disponível online:
-- [Visualizar Javadoc](https://htmlpreview.github.io/?https://github.com/wislleyrennardy/projeto-prog2/blob/implementacao/docs/javadoc/index.html)
+### Menu Principal
+- **1. 🎵 Catálogo Completo**: Ver todas as músicas e podcasts
+- **2. 📊 Recomendações (Top Charts)**: Ver músicas mais populares
+- **3. 🔍 Buscar Música/Artista**: Pesquisar por título ou artista
+- **4. 📂 Minhas Playlists**: Gerenciar suas playlists pessoais
+- **5. ⏯️ Player (Controles)**: Controles de reprodução (play, pause, next, shuffle, ordenar)
+- **6. ❤️ Meu Perfil (Curtidas)**: Ver suas curtidas e configurações da conta
+- **0. 💾 Sair e Salvar**: Salvar dados e encerrar
 
-📐 **Diagrama de Classes**: Visualização UML da estrutura do projeto:
-- [Ver Diagrama de Classes](DIAGRAMA_CLASSES.md)
+## Arquivos de Dados
+
+- `catalogo.db` - Catálogo de músicas e podcasts
+- `usuarios.db` - Dados dos usuários cadastrados
 
 ## Compilação e Execução
 
@@ -164,31 +138,57 @@ java -Dfile.encoding=UTF-8 -jar lib/junit-platform-console-standalone-1.10.2.jar
 | `test.service` | `BibliotecaServiceTest` | Busca, indexação, recomendações |
 | `test.model.playlist` | `PlaylistTest` | CRUD, prevenção de duplicatas |
 
-## Como Usar
+## Documentação
 
-### Primeiro Acesso
-1. Execute o programa
-2. Selecione a opção **2. 📝 Cadastrar**
-3. Preencha email (para login), nome de exibição e senha
-4. Após cadastro, você será logado automaticamente
+📖 **Javadoc**: A documentação completa das classes e métodos está disponível online:
+- [Visualizar Javadoc](https://htmlpreview.github.io/?https://github.com/wislleyrennardy/projeto-prog2/blob/implementacao/docs/javadoc/index.html)
 
-### Login
-1. Selecione a opção **1. 🔑 Login**
-2. Digite seu email e senha
+📐 **Diagrama de Classes**: Visualização UML da estrutura do projeto:
+- [Ver Diagrama de Classes](DIAGRAMA_CLASSES.md)
 
-### Menu Principal
-- **1. 🎵 Catálogo Completo**: Ver todas as músicas e podcasts
-- **2. 📊 Recomendações (Top Charts)**: Ver músicas mais populares
-- **3. 🔍 Buscar Música/Artista**: Pesquisar por título ou artista
-- **4. 📂 Minhas Playlists**: Gerenciar suas playlists pessoais
-- **5. ⏯️ Player (Controles)**: Controles de reprodução (play, pause, next, shuffle, ordenar)
-- **6. ❤️ Meu Perfil (Curtidas)**: Ver suas curtidas e configurações da conta
-- **0. 💾 Sair e Salvar**: Salvar dados e encerrar
+## Estrutura de Pacotes
 
-## Arquivos de Dados
-
-- `catalogo.db` - Catálogo de músicas e podcasts
-- `usuarios.db` - Dados dos usuários cadastrados
+```
+src/
+├── main/
+│   └── Projeto.java              # Classe principal (CLI)
+├── model/
+│   ├── midia/
+│   │   ├── Audio.java            # Classe abstrata base
+│   │   ├── Artista.java          # Modelo de artista
+│   │   ├── Album.java            # Modelo de álbum
+│   │   ├── Musica.java           # Classe de música
+│   │   └── Podcast.java          # Classe de podcast
+│   ├── playlist/
+│   │   └── Playlist.java         # Gerenciamento de playlists
+│   └── usuario/
+│       └── Usuario.java          # Modelo de usuário com autenticação
+├── service/
+│   ├── BibliotecaService.java    # Gerenciamento do catálogo (Singleton)
+│   ├── PlayerService.java        # Controle de reprodução
+│   └── UsuarioService.java       # Gerenciamento de usuários (Singleton)
+├── interfaces/
+│   └── Reproduzivel.java         # Interface para itens reproduzíveis
+├── exception/
+│   ├── BaseAppException.java     # Exceção base da aplicação
+│   ├── ValidacaoException.java   # Exceções de validação
+│   └── UsuarioNaoEncontradoException.java
+├── menu/
+│   ├── MenuPrincipal.java        # Menu principal do sistema
+│   ├── MenuPlayer.java           # Controles do player
+│   ├── MenuPlaylist.java         # Gerenciamento de playlists
+│   ├── TelaAutenticacao.java     # Login e cadastro
+│   ├── TelaCatalogo.java         # Navegação pelo catálogo
+│   ├── TelaPerfil.java           # Perfil do usuário
+│   └── UtilConsole.java          # Utilitários de console
+└── test/
+    ├── service/
+    │   ├── PlayerServiceTest.java
+    │   ├── UsuarioServiceTest.java
+    │   └── BibliotecaServiceTest.java
+    └── model/playlist/
+        └── PlaylistTest.java
+```
 
 ## Tecnologias
 
