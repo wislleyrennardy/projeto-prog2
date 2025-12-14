@@ -44,6 +44,11 @@ src/
     └── Reproduzivel.java      # Interface para itens reproduzíveis
 ```
 
+## Documentação
+
+📖 **Javadoc**: A documentação completa das classes e métodos está disponível online:
+- [Visualizar Javadoc](https://htmlpreview.github.io/?https://github.com/wislleyrennardy/projeto-prog2/blob/implementacao/docs/javadoc/index.html)
+
 ## Compilação e Execução
 
 ### Pré-requisitos
@@ -54,7 +59,7 @@ src/
 
 ### Scripts de Execução (Recomendado)
 
-O projeto inclui scripts prontos que configuram automaticamente o UTF-8 para exibição correta de emojis:
+O projeto inclui scripts prontos para compilar, executar e gerar JAR.
 
 | Ação | Windows | Linux/Mac |
 |------|---------|-----------|

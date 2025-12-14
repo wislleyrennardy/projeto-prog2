@@ -6,7 +6,7 @@ REM ============================================
 cd /d "%~dp0..\.."
 
 echo Compilando...
-javac -encoding UTF-8 -d bin -sourcepath src src/main/Projeto.java
+javac -encoding UTF-8 -d bin -sourcepath src src\main\Projeto.java
 
 if %ERRORLEVEL% NEQ 0 (
     echo Erro na compilacao.

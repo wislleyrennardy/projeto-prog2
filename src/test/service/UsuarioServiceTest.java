@@ -2,6 +2,7 @@ package test.service;
 
 import model.usuario.Usuario;
 import service.UsuarioService;
+import exception.ValidacaoException;
 
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -55,9 +56,11 @@ public class UsuarioServiceTest {
     void testCadastroEmailExistente() {
         String email = "duplicado_" + System.currentTimeMillis() + "@email.com";
         service.cadastrar(email, "senha123", "Primeiro");
-        Usuario segundo = service.cadastrar(email, "outrasenha", "Segundo");
 
-        assertNull(segundo, "Cadastro duplicado deve retornar null");
+        // O serviço lança ValidacaoException para email duplicado
+        assertThrows(ValidacaoException.class, () -> {
+            service.cadastrar(email, "outrasenha", "Segundo");
+        }, "Cadastro duplicado deve lançar ValidacaoException");
     }
 
     @Test
@@ -65,18 +68,21 @@ public class UsuarioServiceTest {
     @DisplayName("Deve rejeitar senha com menos de 4 caracteres")
     void testCadastroSenhaCurta() {
         String email = "curta_" + System.currentTimeMillis() + "@email.com";
-        Usuario user = service.cadastrar(email, "123", "Teste");
 
-        assertNull(user, "Senha curta deve ser rejeitada");
+        // O serviço lança ValidacaoException para senha curta
+        assertThrows(ValidacaoException.class, () -> {
+            service.cadastrar(email, "123", "Teste");
+        }, "Senha curta deve lançar ValidacaoException");
     }
 
     @Test
     @Order(4)
     @DisplayName("Deve rejeitar email sem @ ou .")
     void testCadastroEmailInvalido() {
-        Usuario user = service.cadastrar("emailsemarroba", "senha123", "Teste");
-
-        assertNull(user, "Email inválido deve ser rejeitado");
+        // O serviço lança ValidacaoException para email inválido
+        assertThrows(ValidacaoException.class, () -> {
+            service.cadastrar("emailsemarroba", "senha123", "Teste");
+        }, "Email inválido deve lançar ValidacaoException");
     }
 
     @Test
@@ -99,18 +105,20 @@ public class UsuarioServiceTest {
         String email = "senhaerr_" + System.currentTimeMillis() + "@email.com";
         service.cadastrar(email, "correta1", "Teste");
 
-        Usuario logado = service.login(email, "errada");
-
-        assertNull(logado, "Senha incorreta deve ser rejeitada");
+        // O serviço lança ValidacaoException para senha incorreta
+        assertThrows(ValidacaoException.class, () -> {
+            service.login(email, "errada");
+        }, "Senha incorreta deve lançar ValidacaoException");
     }
 
     @Test
     @Order(7)
     @DisplayName("Deve rejeitar login de usuário inexistente")
     void testLoginUsuarioInexistente() {
-        Usuario logado = service.login("naoexiste_absolutamente@email.com", "qualquer");
-
-        assertNull(logado, "Usuário inexistente deve retornar null");
+        // O serviço lança ValidacaoException para usuário inexistente
+        assertThrows(ValidacaoException.class, () -> {
+            service.login("naoexiste_absolutamente@email.com", "qualquer");
+        }, "Usuário inexistente deve lançar ValidacaoException");
     }
 
     @Test
