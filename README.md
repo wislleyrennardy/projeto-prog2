@@ -44,17 +44,6 @@ src/
     └── Reproduzivel.java      # Interface para itens reproduzíveis
 ```
 
-## Uso de Coleções (Justificativa)
-
-| Coleção | Uso | Justificativa |
-|---------|-----|---------------|
-| `List<Audio>` | Catálogo, playlists, fila de reprodução | Mantém ordem de inserção, permite duplicatas, acesso por índice |
-| `Set<Audio>` | Curtidas do usuário | Evita duplicatas, verificação O(1) se já curtiu |
-| `Set<String>` | Gêneros de artistas | Gêneros únicos por artista |
-| `Map<String, Usuario>` | Busca de usuários por username | Busca O(1) por chave |
-| `Map<String, List<Audio>>` | Índice de busca do catálogo | Busca rápida por termo |
-| `Map<String, Artista>` | Cache de artistas | Evita duplicação de objetos Artista |
-
 ## Compilação e Execução
 
 ### Pré-requisitos
