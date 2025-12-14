@@ -24,30 +24,52 @@ Sistema de gerenciamento de músicas, playlists, artistas e reprodução simulad
 ```
 src/
 ├── main/
-│   └── Projeto.java           # Classe principal (CLI)
+│   └── Projeto.java              # Classe principal (CLI)
 ├── model/
 │   ├── midia/
-│   │   ├── Audio.java         # Classe abstrata base
-│   │   ├── Artista.java       # Modelo de artista
-│   │   ├── Album.java         # Modelo de álbum
-│   │   ├── Musica.java        # Classe de música
-│   │   └── Podcast.java       # Classe de podcast
+│   │   ├── Audio.java            # Classe abstrata base
+│   │   ├── Artista.java          # Modelo de artista
+│   │   ├── Album.java            # Modelo de álbum
+│   │   ├── Musica.java           # Classe de música
+│   │   └── Podcast.java          # Classe de podcast
 │   ├── playlist/
-│   │   └── Playlist.java      # Gerenciamento de playlists
+│   │   └── Playlist.java         # Gerenciamento de playlists
 │   └── usuario/
-│       └── Usuario.java       # Modelo de usuário com autenticação
+│       └── Usuario.java          # Modelo de usuário com autenticação
 ├── service/
-│   ├── BibliotecaService.java # Gerenciamento do catálogo (Singleton)
-│   ├── PlayerService.java     # Controle de reprodução
-│   └── UsuarioService.java    # Gerenciamento de usuários (Singleton)
-└── interfaces/
-    └── Reproduzivel.java      # Interface para itens reproduzíveis
+│   ├── BibliotecaService.java    # Gerenciamento do catálogo (Singleton)
+│   ├── PlayerService.java        # Controle de reprodução
+│   └── UsuarioService.java       # Gerenciamento de usuários (Singleton)
+├── interfaces/
+│   └── Reproduzivel.java         # Interface para itens reproduzíveis
+├── exception/
+│   ├── BaseAppException.java     # Exceção base da aplicação
+│   ├── ValidacaoException.java   # Exceções de validação
+│   └── UsuarioNaoEncontradoException.java
+├── menu/
+│   ├── MenuPrincipal.java        # Menu principal do sistema
+│   ├── MenuPlayer.java           # Controles do player
+│   ├── MenuPlaylist.java         # Gerenciamento de playlists
+│   ├── TelaAutenticacao.java     # Login e cadastro
+│   ├── TelaCatalogo.java         # Navegação pelo catálogo
+│   ├── TelaPerfil.java           # Perfil do usuário
+│   └── UtilConsole.java          # Utilitários de console
+└── test/
+    ├── service/
+    │   ├── PlayerServiceTest.java
+    │   ├── UsuarioServiceTest.java
+    │   └── BibliotecaServiceTest.java
+    └── model/playlist/
+        └── PlaylistTest.java
 ```
 
 ## Documentação
 
 📖 **Javadoc**: A documentação completa das classes e métodos está disponível online:
 - [Visualizar Javadoc](https://htmlpreview.github.io/?https://github.com/wislleyrennardy/projeto-prog2/blob/implementacao/docs/javadoc/index.html)
+
+📐 **Diagrama de Classes**: Visualização UML da estrutura do projeto:
+- [Ver Diagrama de Classes](DIAGRAMA_CLASSES.md)
 
 ## Compilação e Execução
 
@@ -146,22 +168,22 @@ java -Dfile.encoding=UTF-8 -jar lib/junit-platform-console-standalone-1.10.2.jar
 
 ### Primeiro Acesso
 1. Execute o programa
-2. Selecione a opção **2. Cadastrar**
-3. Preencha username, nome de exibição e senha
+2. Selecione a opção **2. 📝 Cadastrar**
+3. Preencha email (para login), nome de exibição e senha
 4. Após cadastro, você será logado automaticamente
 
 ### Login
-1. Selecione a opção **1. Login**
-2. Digite seu username e senha
+1. Selecione a opção **1. 🔑 Login**
+2. Digite seu email e senha
 
 ### Menu Principal
-- **1. Catálogo**: Ver todas as músicas e podcasts
-- **2. Buscar**: Pesquisar por título ou artista
-- **3. Playlists**: Gerenciar suas playlists pessoais
-- **4. Player**: Controles de reprodução (play, pause, next, shuffle)
-- **5. Perfil**: Ver suas curtidas
-- **6. Recomendações**: Ver músicas mais populares
-- **0. Sair**: Salvar dados e encerrar
+- **1. 🎵 Catálogo Completo**: Ver todas as músicas e podcasts
+- **2. 📊 Recomendações (Top Charts)**: Ver músicas mais populares
+- **3. 🔍 Buscar Música/Artista**: Pesquisar por título ou artista
+- **4. 📂 Minhas Playlists**: Gerenciar suas playlists pessoais
+- **5. ⏯️ Player (Controles)**: Controles de reprodução (play, pause, next, shuffle, ordenar)
+- **6. ❤️ Meu Perfil (Curtidas)**: Ver suas curtidas e configurações da conta
+- **0. 💾 Sair e Salvar**: Salvar dados e encerrar
 
 ## Arquivos de Dados
 
