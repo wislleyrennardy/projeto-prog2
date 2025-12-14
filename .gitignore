@@ -4,6 +4,7 @@
 bin/
 out/
 *.class
+*.jar
 *.war
 *.ear
 *.nar
