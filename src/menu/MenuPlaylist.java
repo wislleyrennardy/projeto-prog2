@@ -280,7 +280,8 @@ public class MenuPlaylist {
                 default -> {
                     try {
                         int idx = Integer.parseInt(input) - 1;
-                        if (idx >= 0 && idx < audios.size()) {
+                        // Valida se o índice está dentro da página atual (entre inicio e fim)
+                        if (idx >= inicio && idx < fim) {
                             Audio audio = audios.get(idx);
                             if (playlist.adicionarItem(audio)) {
                                 usuarioService.salvarUsuarios();
@@ -292,7 +293,7 @@ public class MenuPlaylist {
                             }
                             navegando = false;
                         } else {
-                            System.out.println("Índice inválido.");
+                            System.out.println("Índice inválido. Selecione um item da página atual.");
                         }
                     } catch (NumberFormatException e) {
                         // Comando não reconhecido

@@ -34,6 +34,14 @@ import java.util.Scanner;
 public class Projeto {
 
 	/**
+	 * Construtor privado para evitar instanciação.
+	 * Esta é uma classe utilitária com apenas métodos estáticos.
+	 */
+	private Projeto() {
+		// Classe utilitária, não deve ser instanciada
+	}
+
+	/**
 	 * Ponto de entrada da aplicação AudioStreaming.
 	 * 
 	 * <p>

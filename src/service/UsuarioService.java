@@ -28,6 +28,11 @@ public class UsuarioService {
         this.usuarios = new HashMap<>();
     }
 
+    /**
+     * Retorna a instância única do serviço (Singleton).
+     * 
+     * @return Instância única do UsuarioService
+     */
     public static UsuarioService getInstance() {
         if (instance == null) {
             instance = new UsuarioService();

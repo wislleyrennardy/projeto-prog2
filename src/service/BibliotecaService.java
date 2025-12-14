@@ -119,7 +119,9 @@ public class BibliotecaService {
     }
 
     /**
-     * Adiciona item e atualiza o índice de busca.
+     * Adiciona um áudio ao catálogo e atualiza o índice de busca.
+     * 
+     * @param audio Áudio a ser adicionado ao catálogo
      */
     public void adicionarAudio(Audio audio) {
         catalogo.add(audio);
@@ -150,7 +152,15 @@ public class BibliotecaService {
     }
 
     /**
-     * Busca O(1) média no Map ou O(N) parcial se for substring.
+     * Busca áudios por termo no catálogo.
+     * 
+     * <p>
+     * Realiza busca O(1) média no Map para termos exatos,
+     * ou O(N) parcial se for substring.
+     * </p>
+     * 
+     * @param termo Termo de busca (título ou artista)
+     * @return Lista de áudios que correspondem ao termo
      */
     public List<Audio> buscar(String termo) {
         termo = termo.toLowerCase();
@@ -174,14 +184,24 @@ public class BibliotecaService {
         return resultados;
     }
 
+    /**
+     * Retorna o catálogo completo de áudios.
+     * 
+     * @return Lista de todos os áudios cadastrados
+     */
     public List<Audio> getCatalogo() {
         return catalogo;
     }
 
     /**
      * Retorna lista ordenada por popularidade.
-     * Critério primário: curtidas (decrescente)
-     * Critério de desempate: reproduções (decrescente)
+     * 
+     * <p>
+     * Critério primário: curtidas (decrescente).
+     * Critério de desempate: reproduções (decrescente).
+     * </p>
+     * 
+     * @return Lista de áudios ordenada por popularidade
      */
     public List<Audio> getCatalogoPorPopularidade() {
         List<Audio> ordenado = new ArrayList<>(catalogo);
@@ -201,7 +221,13 @@ public class BibliotecaService {
     }
 
     /**
-     * Recomendação simples: Retorna os itens mais curtidos.
+     * Retorna recomendações baseadas nos itens mais curtidos.
+     * 
+     * <p>
+     * Recomendação simples: retorna os top 5 itens mais curtidos.
+     * </p>
+     * 
+     * @return Lista com até 5 áudios mais populares
      */
     public List<Audio> recomendarMaisCurtidos() {
         List<Audio> top = getCatalogoPorPopularidade();
