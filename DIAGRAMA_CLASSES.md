@@ -31,7 +31,7 @@ Este documento contém os diagramas de classes do projeto.
 | Coleção | Classe | Atributo | Justificativa |
 |---------|--------|----------|---------------|
 | `List<Playlist>` | Usuario | playlists | Mantém ordem de criação |
-| `Set<Audio>` | Usuario | curtidas | Evita duplicatas, busca O(1) |
+| `Set<Audio>` | Usuario | curtidas | Evita duplicatas, busca rápida |
 | `List<Audio>` | Playlist | itens | Mantém ordem da playlist |
 
 ---
