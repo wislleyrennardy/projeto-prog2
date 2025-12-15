@@ -21,18 +21,7 @@ out/
 *.tar.gz
 *.rar
 
-# ========================================
-# Eclipse IDE
-# ========================================
-.metadata/
-.settings/
-.classpath
-.project
-.buildpath
-.factorypath
-.loadpath
-.externalToolBuilders/
-*.launch
+
 
 # ========================================
 # IntelliJ IDEA
