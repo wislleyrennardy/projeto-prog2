@@ -16,7 +16,7 @@ fi
 echo "Gerando nova documentação..."
 javadoc -encoding UTF-8 -charset UTF-8 -docencoding UTF-8 \
     -d docs/javadoc \
-    -subpackages main:model:service:menu:exception \
+    -subpackages main:model:service:menu:exception:interfaces \
     -sourcepath src \
     -windowtitle "AudioStreaming - Documentação" \
     -doctitle "AudioStreaming - API Documentation" \
