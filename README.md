@@ -144,7 +144,7 @@ java -Dfile.encoding=UTF-8 -jar lib/junit-platform-console-standalone-1.10.2.jar
 - [Visualizar Javadoc](https://htmlpreview.github.io/?https://github.com/wislleyrennardy/projeto-prog2/blob/main/docs/javadoc/index.html)
 
 📐 **Diagrama de Classes**: Visualização UML da estrutura do projeto:
-- [Ver Diagrama de Classes](DIAGRAMA_CLASSES.md)
+- [Ver Diagrama de Classes](docs/diagramas/README.md)
 
 ## Estrutura de Pacotes
 

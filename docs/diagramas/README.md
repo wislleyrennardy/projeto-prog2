@@ -6,7 +6,7 @@ Este documento contém os diagramas de classes do projeto.
 
 ## 1️⃣ Diagrama: Visão Geral da Arquitetura
 
-![Diagrama de Arquitetura](docs/diagramas/arquitetura.svg)
+![Diagrama de Arquitetura](arquitetura.svg)
 
 **Arquitetura em Camadas**:
 1. **Apresentação** (`menu`): Interface com o usuário via console
@@ -19,13 +19,13 @@ Este documento contém os diagramas de classes do projeto.
 
 ## 2️⃣ Diagrama Completo
 
-![Diagrama Completo](docs/diagramas/diagrama-completo.svg)
+![Diagrama Completo](diagrama-completo.svg)
 
 ---
 
 ## 3️⃣ Diagrama: Interface de Menu (`menu`)
 
-![Diagrama de Menu](docs/diagramas/menu.svg)
+![Diagrama de Menu](menu.svg)
 
 **Arquitetura**: `MenuPrincipal` é o coordenador central que gerencia a navegação entre submenus após o login. `TelaAutenticacao` é exibida antes do login.
 
@@ -33,7 +33,7 @@ Este documento contém os diagramas de classes do projeto.
 
 ## 4️⃣ Diagrama: Camada de Serviços (`service`)
 
-![Diagrama de Serviços](docs/diagramas/service.svg)
+![Diagrama de Serviços](service.svg)
 
 **Padrão Singleton**: `BibliotecaService` e `UsuarioService` têm instância única acessível via `getInstance()`.
 
@@ -50,7 +50,7 @@ Este documento contém os diagramas de classes do projeto.
 
 ## 5️⃣ Diagrama: Exceções (`exception`)
 
-![Diagrama de Exceções](docs/diagramas/excecoes.svg)
+![Diagrama de Exceções](excecoes.svg)
 
 **Hierarquia**: Todas as exceções da aplicação estendem `BaseAppException`, que por sua vez estende `RuntimeException`.
 
@@ -58,7 +58,7 @@ Este documento contém os diagramas de classes do projeto.
 
 ## 6️⃣ Diagrama: Playlist e Usuário (`model.playlist`, `model.usuario`)
 
-![Diagrama de Playlist e Usuário](docs/diagramas/model.svg)
+![Diagrama de Playlist e Usuário](model.svg)
 
 **Coleções Utilizadas**:
 | Coleção | Classe | Atributo | Justificativa |
@@ -71,7 +71,7 @@ Este documento contém os diagramas de classes do projeto.
 
 ## 7️⃣ Diagrama: Modelos de Mídia (`model.midia`)
 
-![Diagrama de Modelos de Mídia](docs/diagramas/model-midia.svg)
+![Diagrama de Modelos de Mídia](model-midia.svg)
 
 - **Herança**: `Musica` e `Podcast` herdam de `Audio`
 - **Classe Abstrata**: `Audio` não pode ser instanciada
@@ -82,6 +82,6 @@ Este documento contém os diagramas de classes do projeto.
 
 ## 8️⃣ Diagrama: Interfaces
 
-![Diagrama de Interfaces](docs/diagramas/interfaces.svg)
+![Diagrama de Interfaces](interfaces.svg)
 
 **Descrição**: Interface `Reproduzivel` define o contrato que `Audio` (e subclasses) devem implementar. Junto com `Serializable` e `Comparable`, formam a base de comportamento do sistema.
