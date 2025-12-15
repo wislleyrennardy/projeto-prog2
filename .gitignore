@@ -1,1 +1,109 @@
+# ========================================
+# Arquivos Compilados Java
+# ========================================
 bin/
+out/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+
+# ========================================
+# Arquivos de Log
+# ========================================
+*.log
+
+# ========================================
+# Arquivos de Pacote
+# ========================================
+*.zip
+*.tar.gz
+*.rar
+
+# ========================================
+# Eclipse IDE
+# ========================================
+.metadata/
+.settings/
+.classpath
+.project
+.buildpath
+.factorypath
+.loadpath
+.externalToolBuilders/
+*.launch
+
+# ========================================
+# IntelliJ IDEA
+# ========================================
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# ========================================
+# NetBeans
+# ========================================
+nbproject/private/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# ========================================
+# VS Code
+# ========================================
+.vscode/
+
+# ========================================
+# Maven
+# ========================================
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# ========================================
+# Gradle
+# ========================================
+.gradle/
+build/
+gradle-app.setting
+!gradle-wrapper.jar
+
+# ========================================
+# Sistema Operacional
+# ========================================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+
+# ========================================
+# Arquivos Temporários
+# ========================================
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+
+# ========================================
+# Arquivos de Teste Gerados
+# ========================================
+test-result.txt
+test-final.txt
+test-all.txt
+sources.txt
